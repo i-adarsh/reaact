@@ -1,10 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export class NewsItem extends Component {  
+const NewsItem = (props) => {
 
-    render() {
-        let {title, description, imageUrl, newsUrl, author, date, source} = this.props;
-        return (
+    let { title, description, imageUrl, newsUrl, author, date, source } = props;
+    return (
         <div className='my-3'>
             <div className="card">
                 <div style={{
@@ -15,13 +14,13 @@ export class NewsItem extends Component {
                 }}>
                     <span className="badge rounded-pill bg-danger "> {source} </span>
                 </div>
-                <img 
-                    src={!imageUrl ? 'https://english.cdn.zeenews.com/sites/default/files/styles/zm_700x400/public/2023/05/15/1200369-iphone15.jpg' : imageUrl} 
+                <img
+                    src={!imageUrl ? 'https://english.cdn.zeenews.com/sites/default/files/styles/zm_700x400/public/2023/05/15/1200369-iphone15.jpg' : imageUrl}
                     className="card-img-top"
-                    alt="..." 
+                    alt="..."
                 />
                 <div className="card-body">
-                    <h5 className="card-title">{title} <span class="badge bg-secondary">New</span>
+                    <h5 className="card-title">{title} <span className="badge bg-secondary">New</span>
                     </h5>
                     <p className="card-text">{description} ...</p>
                     <p className="card-text"><small className="text-body-secondary">By {author ? author : 'Unknown'} on {new Date(date).toGMTString()}</small></p>
@@ -29,8 +28,7 @@ export class NewsItem extends Component {
                 </div>
             </div>
         </div>
-        )
-    }
+    )
 }
 
 export default NewsItem
