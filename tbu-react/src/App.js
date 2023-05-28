@@ -79,8 +79,8 @@ function App() {
     border: '1px solid blue',
     padding: '8px',
     cursor: 'pointer',
-    marginLeft: "45%",
-    marginTop: "25px",
+    marginLeft: "43%",
+    marginTop: "15px",
   };
 
   let persons = null;
@@ -141,8 +141,12 @@ function App() {
 
   // console.log(state.showPersons);
 
+  let cssStyle = [];
+  if (state.persons.length <= 2) cssStyle.push('red');
+  if (state.persons.length <= 1) cssStyle.push('bold');
   return (
     <>
+    <p className={cssStyle.join(' ')} style={{textAlign:"center"}}>This ia a simple paragraph</p>
     <button 
       style={ style }
       onClick={ toggleShowPersons }
