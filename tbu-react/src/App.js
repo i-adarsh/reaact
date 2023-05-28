@@ -47,9 +47,15 @@ function App() {
   }
 
   const deletePersonHandler = ( personIndex ) => {
-    const persons = state.persons;
+    const persons = [...state.persons];
     persons.splice(personIndex, 1);
-    state.persons = persons
+    setState(
+      {
+        persons,
+        otherState: state.otherState,
+        showPersons: state.showPersons
+      }
+    )
   }
 
   const toggleShowPersons = () => {
@@ -84,7 +90,7 @@ function App() {
           state.persons.map((person, index) => {
             return < UserOutput
               key = {person.name}
-              deleteHandler = { deletePersonHandler }
+              deleteHandler = { () => deletePersonHandler(index) }
               userName = {person.name}
              />
           })
