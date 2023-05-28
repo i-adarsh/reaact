@@ -72,17 +72,6 @@ function App() {
     });
   }
 
-  const style = {
-    backgroundColor: 'orange',
-    color: "white",
-    font: 'inherit',
-    border: '1px solid blue',
-    padding: '8px',
-    cursor: 'pointer',
-    marginLeft: "43%",
-    marginTop: "15px",
-  };
-
   let persons = null;
   if (state.showPersons) {
     persons = (
@@ -135,7 +124,6 @@ function App() {
           </Person> */}
       </div>
     );
-    style.backgroundColor = 'cyan';
   }
 
 
@@ -148,7 +136,7 @@ function App() {
     <>
     <p className={cssStyle.join(' ')} style={{textAlign:"center"}}>This ia a simple paragraph</p>
     <button 
-      style={ style }
+      className='button'
       onClick={ toggleShowPersons }
     >Show Persons</button>
     { persons }
