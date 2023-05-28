@@ -73,7 +73,8 @@ function App() {
   }
 
   const style = {
-    backgroundColor: 'white',
+    backgroundColor: 'orange',
+    color: "white",
     font: 'inherit',
     border: '1px solid blue',
     padding: '8px',
@@ -95,6 +96,7 @@ function App() {
              />
           })
         }
+        
           {/* < UserOutput 
             userName = { state.persons[0].name }
           />
@@ -133,6 +135,7 @@ function App() {
           </Person> */}
       </div>
     );
+    style.backgroundColor = 'cyan';
   }
 
 
